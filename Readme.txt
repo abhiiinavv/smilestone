@@ -1,6 +1,4 @@
-Thanks for downloading this template!
+Smile Stone
+Author: https://teqdad.com/
 
-Template Name: Medilab
-Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+
