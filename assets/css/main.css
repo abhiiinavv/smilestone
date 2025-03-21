@@ -1122,6 +1122,7 @@ section,
 
 .services .service-item:hover .icon {
   background: var(--surface-color);
+  border-radius: 5px;
 }
 
 .services .service-item:hover .icon i {
