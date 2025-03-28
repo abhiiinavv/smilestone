@@ -324,6 +324,22 @@ h6 {
   }
 }
 
+@media (max-width: 768px) {
+  .mobile-fixed-btn {
+    position: fixed;
+    left: 10px;
+    bottom: 20px;
+    z-index: 1000;
+    background-color: #ff5722; /* Change to match your theme */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
 }
@@ -789,6 +805,38 @@ h6 {
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
+  }
+}
+
+/* flaoting section */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #4c7474, #133e44) !important;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  display: none;
+  z-index: 1000;
+}
+
+
+
+.floating-button:focus,
+.floating-button:active,
+.floating-button:hover {
+  color: white !important;
+}
+
+
+@media screen and (max-width: 768px) {
+  .floating-button {
+    display: block;
   }
 }
 

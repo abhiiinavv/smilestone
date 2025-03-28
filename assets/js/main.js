@@ -1,10 +1,4 @@
-/**
-* Template Name: Medilab
-* Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
   "use strict";
@@ -71,23 +65,23 @@
   /**
    * Scroll top button
    */
-  let scrollTop = document.querySelector('.scroll-top');
+  // let scrollTop = document.querySelector('.scroll-top');
 
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  // function toggleScrollTop() {
+  //   if (scrollTop) {
+  //     window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  //   }
+  // }
+  // scrollTop.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth'
+  //   });
+  // });
 
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  // window.addEventListener('load', toggleScrollTop);
+  // document.addEventListener('scroll', toggleScrollTop);
 
   /**
    * Animation on scroll function and init
@@ -183,3 +177,20 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   function updateButton() {
+//     let button = document.querySelector(".cta-btn");
+
+//     if (window.innerWidth <= 768) {
+//       button.textContent = "Booking";
+//       button.classList.add("mobile-fixed-btn"); // Add class for styling
+//     } else {
+//       button.textContent = "Make an Appointment";
+//       button.classList.remove("mobile-fixed-btn"); // Remove class if not mobile
+//     }
+//   }
+
+//   updateButton(); // Run on load
+//   window.addEventListener("resize", updateButton); // Update on resize
+// });
