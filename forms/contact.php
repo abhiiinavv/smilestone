@@ -1,36 +1,35 @@
 <?php
-  
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and get form inputs
+    $name = htmlspecialchars(trim($_POST["name"]));
+    $email = htmlspecialchars(trim($_POST["email"]));
+    $subject = htmlspecialchars(trim($_POST["subject"]));
+    $message = htmlspecialchars(trim($_POST["message"]));
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+    // Prepare email
+    $to = "smilestonedentalclinic11@gmail.com";
+    $email_subject = "New Enquiry: $subject";
+    $email_body = "You have received a new enquiry from your website contact form.\n\n" .
+                  "Name: $name\n" .
+                  "Email: $email\n" .
+                  "Subject: $subject\n\n" .
+                  "Message:\n$message";
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+    // Try to send the email
+    if (mail($to, $email_subject, $email_body, $headers)) {
+        // Send success response as JSON
+        echo json_encode(['status' => 'success', 'message' => 'Your message has been sent. Thank you!']);
+    } else {
+        // Send error response as JSON
+        echo json_encode(['status' => 'error', 'message' => 'Message could not be sent. Please try again.']);
+    }
+}
 ?>

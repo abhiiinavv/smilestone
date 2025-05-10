@@ -811,7 +811,7 @@ h6 {
 /* flaoting section */
 .floating-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   right: 20px;
   background: linear-gradient(45deg, #4c7474, #133e44) !important;
   color: white;
@@ -1677,4 +1677,48 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+
+/* Call_button */
+
+/* Shared Button Styles */
+.call-button,
+.whatsapp-button {
+    position: fixed;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: background-color 0.3s ease;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+  bottom: 125px;
+  background: linear-gradient(45deg, #4c7474, #133e44);
+}
+
+.whatsapp-button:hover {
+  background: #ffffff !important;
+  color: #133e44; /* optional: change icon color on hover */
+}
+
+
+/* Call Button */
+.call-button {
+    bottom: 65px;
+    background: linear-gradient(45deg, #4c7474, #133e44);
+}
+
+.call-button:hover {
+    background: #ffffff !important;
+    ;
 }
