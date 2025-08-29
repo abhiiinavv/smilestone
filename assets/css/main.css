@@ -811,7 +811,7 @@ h6 {
 /* flaoting section */
 .floating-button {
   position: fixed;
-  bottom: 20px;
+  bottom: 15px;
   right: 20px;
   background: linear-gradient(45deg, #4c7474, #133e44) !important;
   color: white;
